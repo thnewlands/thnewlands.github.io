@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title> exquisitepage </title>
+		
+		<style>
+	body {
+	  height: 1200px;
+	  background: linear-gradient(rgb(25,23,13), black); /* Standard syntax */
+	}		
+
+	.sewer {
+		position: absolute;
+		top: 700px;
+	}
+		
+	.rac {
+		position: absolute;
+		top: 200px;
+		left: 200px;
+		-webkit-animation: racmove 2s infinite;
+	}
+	
+	.construction {
+		position: absolute;
+		top: 1000px;
+		left: 0px;
+	}
+	
+	.construction2 {
+		position: absolute;
+		top: 1000px;
+		left: 500px;
+	}
+	
+	.construction3 {
+		position: absolute;
+		top: 1000px;
+		left: 250px;
+	}
+	
+	@-webkit-keyframes racmove {
+		
+		0% {
+			top: 0px;
+			transform: rotate(0deg);
+		}
+		
+		50% {
+			top: 1050px;
+			transform: rotate(360deg);
+		}
+		
+		100% {
+			top: 0px;
+			transform: rotate(720deg);
+		}
+		
+		}
+
+		</style>
+		
+<body bgcolor="black">
+		
+	</head>	
+	<body>
+	
+		<img style="position: absolute; top: 800px; left: 0px; height:auto; width:auto; max-width:800px; max-height:800px;" src="images/sewer.png">
+		<img style="position: center; height:auto; width:auto; max-width:800px; max-height:800px;" src="images/skyline.png">
+		<img style="position: center; height:370px; width:800px; max-width:800px; max-height:800px;" src="images/sidewalk.png">
+		<img style="position: absolute; top: 300px; left: 40px; width:600px; height:auto;"" src="images/sewerenter2.png">
+		<img src="images/raccoon.gif" class="rac">
+		<img style="position: absolute; top: 300px; left: 40px; width:600px; height:auto;" src="images/sewerenter3.png">
+		<img src="images/construction.gif" class="construction"> 
+		<img src="images/construction.gif" class="construction2">
+		<img src="images/construction.gif" class="construction3"> 
+		<div id="grad"></div>
+		
+	</body>
+	
