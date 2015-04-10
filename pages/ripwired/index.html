@@ -8,6 +8,22 @@
 
 body {
   background: black;
+  overflow:hidden;
+
+}
+
+textbounce {
+    z-index: 0;
+}
+
+footer {
+	font-family: sans-serif;
+	font-size: medium;
+	z-index: -1;
+	position: absolute;
+	top: 93%;
+	right: 2%;
+	color: #292929;
 }
 
 
@@ -15,128 +31,134 @@ body {
 </head>
 <body>
 
-<div id="canvas"></div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r69/three.js"></script>
-<script src="fonts/droid_sans_bold.typeface.js"></script>
-<script src="js/THREEx.WindowResize.js"></script>
+<footer>
+	in the loving memory of saic's wired courses. <br> ~thomas newlands 4/10/2015~
+</footer>
 
-<script>
+<textbounce>
+	<div id="canvas"></div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r69/three.js"></script>
+	<script src="fonts/droid_sans_bold.typeface.js"></script>
+	<script src="js/THREEx.WindowResize.js"></script>
 
-// standard global variables
-var container, scene, camera, renderer, textMesh2;
-var velocityX = 7, velocityY = 7;
-var bumpSpeed = 7;
-var frame;
-var threeDtext = 'RIP WIRED ~ 2015';
-//var axis = new THREE.Vector3(0,1,1);
+	<script>
 
-function init() {
-// SCENE
-scene = new THREE.Scene();
+	// standard global variables
+	var container, scene, camera, renderer, textMesh2;
+	var velocityX = 7, velocityY = 7;
+	var bumpSpeed = 7;
+	var frame;
+	var threeDtext = 'RIP WIRED ~ 2015';
+	//var axis = new THREE.Vector3(0,1,1);
 
-
-
-// CAMERA
-var SCREEN_WIDTH = window.innerWidth - 20, SCREEN_HEIGHT = window.innerHeight - 20;
-var VIEW_ANGLE = 30, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 0.1, FAR = 20000;
-camera = new THREE.PerspectiveCamera( VIEW_ANGLE, ASPECT, NEAR, FAR);
-scene.add(camera);
-camera.position.set(0,0,5000);
-camera.lookAt(scene.position);
-renderer = new THREE.WebGLRenderer({antialias:true, alpha:true});
-renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
-container = document.getElementById( 'canvas' );
-container.appendChild( renderer.domElement );
-
-// LIGHT
-var light = new THREE.PointLight(0xffffff);
-light.position.set(0,0,10000);
-scene.add(light);
-
-THREEx.WindowResize(renderer, camera);
+	function init() {
+	// SCENE
+	scene = new THREE.Scene();
 
 
-// add 3D text beveled and sized
-var material2 = new THREE.MeshPhongMaterial({
-    color:0xFFFF99,//default is 0xffffff
-    //vertexColors: THREE.FaceColors,//THREE.VertexColors,
-    //morphTargets: true,//? doesn't work here
-    shading: THREE.FlatShading,//comment out for other default shading type
-    //shading:THREE.NoShading,//uncomment for no shading at all.
-    wireframe: false,
-    wireframeLinewidth: 1,//windows is always 1, but macs/linux will change line width
-    //emissive: 0xFF0300,//color of the material, essentially a solid color unaffected by other lighting. Default is black.
-    specular: 0xFF0300,//color of shine
-    shininess: 65,//default is 30, higher the shinier
-    //reflectivity: 100,//not sure what values are, but didn't make diff
-    //opacity: 0.4,//0.0 - 1.0 
-    transparent: true,
-});
 
-var textGeom2 = new THREE.TextGeometry( threeDtext, {
-    size: 180, //text size
-    height: 100, //thickness of text's extrude!
-    curveSegments: 1,
-    font: 'droid sans', 
-    weight: 'bold',//normal or bold(both don't always work with all fonts)
-    style: 'normal',//normal or italics(both don't always work with all fonts)
-    bevelThickness: 12, //how deep bevel goes into text
-    bevelSize: 8, //dist of bevel from text outline
-    bevelEnabled: false
-});
-textMesh2 = new THREE.Mesh( textGeom2, material2 );
+	// CAMERA
+	var SCREEN_WIDTH = window.innerWidth, SCREEN_HEIGHT = window.innerHeight;
+	var VIEW_ANGLE = 30, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 0.1, FAR = 20000;
+	camera = new THREE.PerspectiveCamera( VIEW_ANGLE, ASPECT, NEAR, FAR);
+	scene.add(camera);
+	camera.position.set(0,0,5000);
+	camera.lookAt(scene.position);
+	renderer = new THREE.WebGLRenderer({antialias:true, alpha:true});
+	renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+	container = document.getElementById( 'canvas' );
+	container.appendChild( renderer.domElement );
 
-textGeom2.computeBoundingBox();
-var textWidth2 = textGeom2.boundingBox.max.x - textGeom2.boundingBox.min.x;
+	// LIGHT
+	var light = new THREE.PointLight(0xffffff);
+	light.position.set(0,0,10000);
+	scene.add(light);
 
-textMesh2.position.set( -0.5 * textWidth2, 0, 60 );//left-rt/high/far
-scene.add( textMesh2 );
+	THREEx.WindowResize(renderer, camera);
 
-pivot = new THREE.Object3D();
-pivot.add( textMesh2 );
-scene.add( pivot );
-}//end init function
 
-function render() {
-	renderer.render(scene, camera);
-}
+	// add 3D text beveled and sized
+	var material2 = new THREE.MeshPhongMaterial({
+		color:0xFFFF99,//default is 0xffffff
+		//vertexColors: THREE.FaceColors,//THREE.VertexColors,
+		//morphTargets: true,//? doesn't work here
+		shading: THREE.FlatShading,//comment out for other default shading type
+		//shading:THREE.NoShading,//uncomment for no shading at all.
+		wireframe: false,
+		wireframeLinewidth: 1,//windows is always 1, but macs/linux will change line width
+		//emissive: 0xFF0300,//color of the material, essentially a solid color unaffected by other lighting. Default is black.
+		specular: 0xFF0300,//color of shine
+		shininess: 65,//default is 30, higher the shinier
+		//reflectivity: 100,//not sure what values are, but didn't make diff
+		//opacity: 0.4,//0.0 - 1.0 
+		transparent: true,
+	});
 
-function animate() {
-	window.requestAnimationFrame(animate);
-	render();
+	var textGeom2 = new THREE.TextGeometry( threeDtext, {
+		size: 180, //text size
+		height: 100, //thickness of text's extrude!
+		curveSegments: 1,
+		font: 'droid sans', 
+		weight: 'bold',//normal or bold(both don't always work with all fonts)
+		style: 'normal',//normal or italics(both don't always work with all fonts)
+		bevelThickness: 12, //how deep bevel goes into text
+		bevelSize: 8, //dist of bevel from text outline
+		bevelEnabled: false
+	});
+	textMesh2 = new THREE.Mesh( textGeom2, material2 );
 
-	pivot.rotation.y += 0.015;
-	pivot.rotation.x += 0.015;
+	textGeom2.computeBoundingBox();
+	var textWidth2 = textGeom2.boundingBox.max.x - textGeom2.boundingBox.min.x;
 
-	pivot.position.y += velocityY;
-	pivot.position.x += velocityX;
+	textMesh2.position.set( -0.5 * textWidth2, 0, 60 );//left-rt/high/far
+	scene.add( textMesh2 );
 
-	if(pivot.position.x >= window.innerWidth) {
-    velocityX =-bumpSpeed;
-  }
-  
-  	if(pivot.position.x <= -window.innerWidth) {
-    velocityX =bumpSpeed;
-  }
-	
-	if(pivot.position.y >= window.innerHeight) {
-    velocityY =-bumpSpeed;
-  }
-  
-  	if(pivot.position.y <= -window.innerHeight) {
-    velocityY =bumpSpeed;
-  }
-	
-	frame+=1; //incrementing 1s	per loop
-	if(frame==100){
-		frame = 0; //reset loop
+	pivot = new THREE.Object3D();
+	pivot.add( textMesh2 );
+	scene.add( pivot );
+	}//end init function
 
-		}
+	function render() {
+		renderer.render(scene, camera);
 	}
 
-init();
-animate();
-</script>
+	function animate() {
+		window.requestAnimationFrame(animate);
+		render();
+
+		pivot.rotation.y += 0.015;
+		pivot.rotation.x += 0.015;
+
+		pivot.position.y += velocityY;
+		pivot.position.x += velocityX;
+
+		if(pivot.position.x >= window.innerWidth) {
+		velocityX =-bumpSpeed;
+	  }
+	  
+		if(pivot.position.x <= -window.innerWidth) {
+		velocityX =bumpSpeed;
+	  }
+		
+		if(pivot.position.y >= window.innerHeight) {
+		velocityY =-bumpSpeed;
+	  }
+	  
+		if(pivot.position.y <= -window.innerHeight) {
+		velocityY =bumpSpeed;
+	  }
+		
+		frame+=1; //incrementing 1s	per loop
+		if(frame==100){
+			frame = 0; //reset loop
+
+			}
+		}
+
+	init();
+	animate();
+	</script>
+</textbounce>
 
 </body>
 </html>
