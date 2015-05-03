@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html>
+	
+	<head>
+	
+	<title>
+		Solo Jazz Cup Generator
+	</title>
+	
+		<meta charset="utf-8">
+		<style>
+			body {
+				//background-color: rgba(0,254,224,.03);
+				background-color: rgba(254,0,140,1);
+				margin: 0;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<script src="js/Three.js"></script>
+		<script src="js/THREEx.WindowResize.js"></script>
+		
+		<script>
+			//
+			//Made by Thomas Newlands http://www.saic.edu/~tnewla/ with plenty of help from Nick Briz http://nickbriz.com/ in his WIRED class and Three.js Examples https://stemkoski.github.io/Three.js/
+			//Original Solo Jazz Cup design belongs to Solo http://www.solocup.com/
+			
+			var ctx, tcanvas;
+
+			function texturecyan(){    
+
+				// create new canvas
+				var textureCanvas = document.createElement("canvas");
+				textureCanvas.width = 900;
+				textureCanvas.height = 650;
+				ctx2 = textureCanvas.getContext("2d");
+
+
+				// draw texture over new canvas
+				var dots = 2500;       //9500 is default value
+				for(i=0;i<dots;i++){  
+					var s = Math.random()*30; // random size
+					var x = Math.random()*textureCanvas.width; // ran x
+					var y = Math.random()*textureCanvas.height; // ran y
+					ctx2.fillStyle ="rgba(0, 196, 205, 1)";
+					//ctx2.fillRect(x, y, s,s);   // draw dot
+					ctx2.beginPath();
+      				ctx2.arc(x, y, s, 0, 2 * Math.PI, false);
+					ctx2.fill()
+					ctx2.closePath
+				}
+
+				return textureCanvas;
+			}
+
+
+			function texturepurple(){    
+
+				// create new canvas
+				var textureCanvas = document.createElement("canvas");
+				textureCanvas.width = 900;
+				textureCanvas.height = 650;
+				ctx2 = textureCanvas.getContext("2d");
+
+
+				// draw texture over new canvas
+				var dots = 1000;       
+				for(i=0;i<dots;i++){  
+					var s = Math.random()*40; // random size
+					var x = Math.random()*textureCanvas.width; // ran x
+					var y = Math.random()*textureCanvas.height; // ran y
+					ctx2.fillStyle ="rgba(80, 0, 130, 1)";
+					ctx2.beginPath();
+      				ctx2.arc(x, y, s, 0, 2 * Math.PI, false);
+					ctx2.fill()
+					ctx2.closePath();
+				}
+
+				return textureCanvas;
+			}
+
+			function canvassetup(){
+				tcanvas = document.createElement("canvas");
+				tcanvas.width = 900 //window.innerWidth;
+				tcanvas.height = 650 //window.innerHeight;
+			//	document.body.appendChild(tcanvas);
+				ctx = tcanvas.getContext("2d");
+			}
+
+
+
+			function drawmaterial(){
+				//clear background
+				ctx.clearRect(0,0,tcanvas.width,tcanvas.height);
+				//background
+				ctx.fillStyle="white";
+				ctx.fillRect(0,0,tcanvas.width,tcanvas.height);
+
+				
+				
+				// start cyan line ------------------------------------------
+				var w = 900;   // total width
+				var lns = 12;            // number of lines for loop
+				var axis = 300;         // horizontal axis
+				var pull = 0;           // how much to pull back or forward
+				var x = 0;              // x point
+				var y = 0;              // y point
+
+				// new stroke style based on img above <<<<<<<<<<<<<<<<<<<<<<<<<
+				ctx.strokeStyle = ctx.createPattern( texturecyan(), 'repeat');
+
+				ctx.lineWidth = 75; 
+				ctx.beginPath();
+					
+				ctx.moveTo( x+pull, y+axis ); // start point
+				for(i=0; i<lns; i++){ // loop to make multiple lineTo();
+					
+					x += w/lns; // increase x by segment width for each
+					y = (Math.random()*60) + 70; // new random y value
+					pull = Math.random()*50 + 50; // new pull amount
+
+					if(i%2==0){ // if iteration is even
+						ctx.lineTo( x+pull, y+axis ); 
+					} else { // if iteration if odd then 
+						ctx.lineTo( x-pull, -y+axis );
+					}
+				}
+				
+				ctx.stroke();
+				ctx.closePath();
+				// end cyan line ---------------------------------------------
+				
+				
+				// start purple line -----------------------------------------
+				var w = 900;   // total width
+				var lns = 12;            // number of lines for loop
+				var axis = 300;         // horizontal axis
+				var pull = 0;           // how much to pull back or forward
+				var x = 0;              // x point
+				var y = 0;              // y point
+
+				ctx.strokeStyle = ctx.createPattern( texturepurple(), 'repeat');
+				ctx.lineWidth = 15; 
+				ctx.beginPath();
+				ctx.moveTo( x+pull, y+axis ); // start point
+				for(i=0; i<lns; i++){ // loop to make multiple lineTo();
+					
+					x += w/lns; // increase x by segment width for each
+					y = (Math.random()*60) + 8; // new random y value
+					pull = Math.random()*50 + 50; // new pull amount
+
+					if(i%2==0){ // if iteration is even
+						ctx.lineTo( x+pull, y+axis ); 
+					} else { // if iteration if odd then 
+						ctx.lineTo( x-pull, -y+axis );
+					}
+				}
+
+				ctx.stroke();
+				ctx.closePath();
+				// end cyan line ---------------------------------------------
+			}
+			 
+			canvassetup();
+			//setInterval( drawmaterial, 1000 );
+
+
+
+
+
+
+
+
+
+
+			
+			//everything below here is WebGLRenderer
+			// -------------------------------------------------------------------
+			// -------------------------------------------------------------------
+			// -------------------------------------------------------------------
+			// -------------------------------------------------------------------
+			var camera, scene, renderer;
+			var geometry, material, mesh;
+			var frame = 0;
+
+			function papercup(texture1){
+				loader = new THREE.JSONLoader();
+				loader.load( 'objects/jazzcup.json', function ( geometry ) {
+					//material = new THREE.MeshBasicMaterial( {map: texture1, side:THREE.DoubleSide } );
+					material = new THREE.MeshPhongMaterial({shading: THREE.SmoothShading, color: 0xffffff, ambient: 0xffffff, emissive: 0xa7a7a7, specular: 0xffffff, shininess: .7, map: texture1, transparent: true, opacity: 1});
+					mesh = new THREE.Mesh( geometry, material);
+					scene.add( mesh );
+				});
+			}
+			
+			function setup() {
+			
+				var W = window.innerWidth, H = window.innerHeight;
+				renderer = new THREE.WebGLRenderer();
+				renderer.setSize( W, H );
+				document.body.appendChild( renderer.domElement );
+
+				camera = new THREE.PerspectiveCamera( 50, W/H, 1, 10000 );
+				camera.position.z = 200;
+				camera.position.y = 50;
+
+				scene = new THREE.Scene();
+				
+				
+				// paste your code from the geometryGUI here
+				
+				directionalLight = new THREE.DirectionalLight(0xffffff, 0.2);
+				directionalLight.position.set( -2.5, -2.5, 50 );
+				directionalLight.castShadow = true;
+				scene.add( directionalLight );
+				
+				var texture1 = new THREE.Texture(tcanvas)
+				texture1.needsUpdate = true;
+				papercup(texture1);
+			}
+
+			function draw() {
+
+				requestAnimationFrame( draw );
+				
+				// experiment with code from the snippets menu here
+				
+				//counter
+				frame+=1; //incrementing 1s	per loop
+				if(frame==100){
+					drawmaterial(); //draw canvas 
+					frame = 0; //reset loop
+				}
+				mesh.rotation.y = Date.now() * 0.001;
+				mesh.material.map.needsUpdate = true;
+				renderer.render( scene, camera );
+
+			}
+
+			setup();
+			draw();
+		</script>
+	</body>
+</html>
+				THREEx.WindowResize(renderer, camera);
