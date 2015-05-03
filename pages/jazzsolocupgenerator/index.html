@@ -220,6 +220,8 @@
 				var texture1 = new THREE.Texture(tcanvas)
 				texture1.needsUpdate = true;
 				papercup(texture1);
+				
+				THREEx.WindowResize(renderer, camera);
 			}
 
 			function draw() {
@@ -245,4 +247,3 @@
 		</script>
 	</body>
 </html>
-				THREEx.WindowResize(renderer, camera);
