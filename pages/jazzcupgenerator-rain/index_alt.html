@@ -23,8 +23,7 @@
 		<script src="js/Three.js"></script>
 		<script src="js/THREEx.WindowResize.js"></script>
 		
-				<script>
-
+		<script>
 		
 			//
 			//Made by Thomas Newlands http://thnewlands.github.io with plenty of help 
@@ -39,15 +38,15 @@
 
 				// create new canvas
 				var textureCanvas = document.createElement("canvas");
-				textureCanvas.width = 450;
-				textureCanvas.height = 325;
+				textureCanvas.width = 900;
+				textureCanvas.height = 650;
 				ctx2 = textureCanvas.getContext("2d");
 
 
 				// draw texture over new canvas
-				var dots = 1000;       //9500 is default value
+				var dots = 2500;       //9500 is default value
 				for(i=0;i<dots;i++){  
-					var s = Math.random()*23; // random size
+					var s = Math.random()*30; // random size
 					var x = Math.random()*textureCanvas.width; // ran x
 					var y = Math.random()*textureCanvas.height; // ran y
 					ctx2.fillStyle ="rgba(0, 196, 205, 1)";
@@ -66,15 +65,15 @@
 
 				// create new canvas
 				var textureCanvas = document.createElement("canvas");
-				textureCanvas.width = 450;
-				textureCanvas.height = 325;
+				textureCanvas.width = 900;
+				textureCanvas.height = 650;
 				ctx2 = textureCanvas.getContext("2d");
 
 
 				// draw texture over new canvas
-				var dots = 400;       
+				var dots = 1000;       
 				for(i=0;i<dots;i++){  
-					var s = Math.random()*25; // random size
+					var s = Math.random()*40; // random size
 					var x = Math.random()*textureCanvas.width; // ran x
 					var y = Math.random()*textureCanvas.height; // ran y
 					ctx2.fillStyle ="rgba(80, 0, 130, 1)";
@@ -88,19 +87,16 @@
 			}
 
 			function canvassetup(){
-
+				tcanvas = document.createElement("canvas");
+				tcanvas.width = 900 //window.innerWidth;
+				tcanvas.height = 650 //window.innerHeight;
+			//	document.body.appendChild(tcanvas);
+				ctx = tcanvas.getContext("2d");
 			}
 
 
 
 			function drawmaterial(){
-				
-				tcanvas = document.createElement("canvas");
-				tcanvas.width = 450 //window.innerWidth;
-				tcanvas.height = 325 //window.innerHeight;
-				//	document.body.appendChild(tcanvas);
-				ctx = tcanvas.getContext("2d");
-				
 				//clear background
 				ctx.clearRect(0,0,tcanvas.width,tcanvas.height);
 				//background
@@ -110,9 +106,9 @@
 				
 				
 				// start cyan line ------------------------------------------
-				var w = 450;   // total width
+				var w = 900;   // total width
 				var lns = 12;            // number of lines for loop
-				var axis = 150;         // horizontal axis
+				var axis = 300;         // horizontal axis
 				var pull = 0;           // how much to pull back or forward
 				var x = 0;              // x point
 				var y = 0;              // y point
@@ -120,15 +116,15 @@
 				// new stroke style based on img above <<<<<<<<<<<<<<<<<<<<<<<<<
 				ctx.strokeStyle = ctx.createPattern( texturecyan(), 'repeat');
 
-				ctx.lineWidth = 37.5; 
+				ctx.lineWidth = 75; 
 				ctx.beginPath();
 					
 				ctx.moveTo( x+pull, y+axis ); // start point
 				for(i=0; i<lns; i++){ // loop to make multiple lineTo();
 					
 					x += w/lns; // increase x by segment width for each
-					y = (Math.random()*30) + 35; // new random y value
-					pull = Math.random()*25 + 25; // new pull amount
+					y = (Math.random()*60) + 70; // new random y value
+					pull = Math.random()*50 + 50; // new pull amount
 
 					if(i%2==0){ // if iteration is even
 						ctx.lineTo( x+pull, y+axis ); 
@@ -143,22 +139,22 @@
 				
 				
 				// start purple line -----------------------------------------
-				var w = 450;   // total width
+				var w = 900;   // total width
 				var lns = 12;            // number of lines for loop
-				var axis = 150;         // horizontal axis
+				var axis = 300;         // horizontal axis
 				var pull = 0;           // how much to pull back or forward
 				var x = 0;              // x point
 				var y = 0;              // y point
 
 				ctx.strokeStyle = ctx.createPattern( texturepurple(), 'repeat');
-				ctx.lineWidth = 7.5; 
+				ctx.lineWidth = 15; 
 				ctx.beginPath();
 				ctx.moveTo( x+pull, y+axis ); // start point
 				for(i=0; i<lns; i++){ // loop to make multiple lineTo();
 					
 					x += w/lns; // increase x by segment width for each
-					y = (Math.random()*30) + 4; // new random y value
-					pull = Math.random()*25 + 25; // new pull amount
+					y = (Math.random()*60) + 8; // new random y value
+					pull = Math.random()*50 + 50; // new pull amount
 
 					if(i%2==0){ // if iteration is even
 						ctx.lineTo( x+pull, y+axis ); 
@@ -170,12 +166,11 @@
 				ctx.stroke();
 				ctx.closePath();
 				// end cyan line ---------------------------------------------
-				
-				return new THREE.Texture(tcanvas);
-
 			}
 			 
 			canvassetup();
+			//setInterval( drawmaterial, 1000 );
+
 
 
 
@@ -194,10 +189,31 @@
 			var camera, scene, renderer;
 			var geometry, material, mesh;
 			var frame = 0;
+			var texture1;
 			var cupcounter = 0;
 			
-			var cups = [];
+			var particles = [];
 
+			function papercup(texture1){
+				loader = new THREE.JSONLoader();
+				loader.load( 
+
+					'objects/jazzcup.json', function ( geometry ) {
+						
+					material = new THREE.MeshPhongMaterial({shading: 
+					THREE.SmoothShading, color: 0xffffff, ambient: 0xffffff, emissive: 0xa7a7a7, specular: 0xffffff, 
+					shininess: .7, map: texture1, transparent: true, opacity: 1});
+						
+					mesh = new THREE.Mesh( geometry, material);
+					
+					var particle = make_particle(geometry, material, mesh);
+					//defines particle
+					particles.push(particle);
+					//sticks particle to the end of the array (var particles [])
+					
+				});
+			}
+			
 			function setup() {
 			
 				var W = window.innerWidth, H = window.innerHeight;
@@ -220,76 +236,111 @@
 				scene.add( directionalLight );
 				
 				
+				texture1 = new THREE.Texture(tcanvas)
+				texture1.needsUpdate = true;
+				papercup(texture1);
 				
 				THREEx.WindowResize(renderer, camera);
 			}
 
-			
-			function make_papercup()
+			function Particle(geometry, material, mesh)
 			{
-				var texture1 = drawmaterial();
-				var meshscale = Math.random()*.4+.1;
-
+				this.geometry = geometry;
+				this.material = material;
+				this.mesh = mesh;
+				this.creationTime = 0;
+				this.xSpeed = 0;
+				this.ySpeed = 0;
+				this.zSpeed = 0;
+				this.x = 0;
+				this.y = 0;
+				this.z = 0;
+			}
+				
+			
+			function make_particle(geometry, material, mesh)
+			{
+				var p = new Particle(geometry, material, mesh);
+				p.creationTime = getTime();
+				return p;
+			}
+			
+			function make_papercup_particle()
+			{
 				loader = new THREE.JSONLoader();
 				loader.load( 
 
-					'objects/jazzcup.json', function (geometry) {
+					'objects/jazzcup.json', function ( geometry ) {
 
-					material = new THREE.MeshPhongMaterial({shading: 
+					var pc_material = new THREE.MeshPhongMaterial({shading: 
 						THREE.SmoothShading, color: 0xffffff, ambient: 0xffffff, emissive: 0xa7a7a7, specular: 0xffffff, 
 						shininess: .7, map: texture1, transparent: true, opacity: 1});
 						
+					var pc_mesh = new THREE.Mesh( geometry, pc_material);
 					
-					mesh = new THREE.Mesh(geometry, material);
-
-					mesh.position.y = 150;
-					mesh.position.x = Math.random()*75 - 40;
-					mesh.position.z = Math.random()*175;
+					var pc_particle = make_particle(geometry, pc_material, pc_mesh);
 					
-					mesh.scale.y = meshscale;
-					mesh.scale.x = meshscale;
-					mesh.scale.z = meshscale;
-
-					scene.add(mesh);
-					//sticks particle to the end of the array (var particles [])	
+					var meshscale = Math.random()*.4+.1;
+						
+					pc_mesh.position.y = 150
+					pc_mesh.position.x = Math.random()*75 - 40;
+					pc_mesh.position.z = Math.random()*175;
+					
+					pc_mesh.scale.x = meshscale;
+					pc_mesh.scale.y = meshscale;
+					pc_mesh.scale.z = meshscale;
+						
 					//defines particle
-					cups.push(mesh);
+					particles.push(pc_particle);
+					//sticks particle to the end of the array (var particles [])
+					
+					scene.add( pc_mesh );
 				});
 				
 			}
 			
+			function getTime(){
+				var d = new Date();
+				return d.getTime();
+			}
 						
 			function draw() {
-				requestAnimationFrame( draw );				
+				requestAnimationFrame( draw );
+				
+				// experiment with code from the snippets menu here
+				
 				//counter
 				frame+=1; //incrementing 1s	per loop
 				if(frame==100){
-				frame = 0; //reset loop
+					drawmaterial(); //draw canvas 
+					frame = 0; //reset loop
 				}
 				if(frame==25){
-					if(cups.length <= 25)
-						make_papercup();
+					if(particles.length < 25)
+						make_papercup_particle();
 						cupcounter ++;
 						console.log (cupcounter);
 
-					if(cups.length >= 25)
+					if(particles.length >= 25)
 					{
-						scene.remove(cups[0].mesh);
+						scene.remove(particles[0].mesh);
 						cupcounter --;
-						cups.splice(0,1);
+						particles.splice(0,1);
 					}
 				}
 				
-				for(var i = 0; i < cups.length; i++)
+				for(var i = 0; i < particles.length; i++)
 				{
-					cups[i].position.y -= .2;
+					particles[i].mesh.position.y -= .2;
 					
-					cups[i].rotation.y = Date.now() * 0.001;
+					particles[i].mesh.rotation.y = Date.now() * 0.001;
 					
-					cups[i].material.map.needsUpdate = true;
+					particles[i].mesh.material.map.needsUpdate = true;
 
 				}
 				
+				//mesh.rotation.y = Date.now() * 0.001;
+				//mesh.material.map.needsUpdate = true;
 				renderer.render( scene, camera );
 			}
 			
