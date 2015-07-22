@@ -1,0 +1,57 @@
+/* unvisited link */
+a:link {
+    color: #2b3d50;
+}
+
+/* visited link */
+a:visited {
+    color:#9ca4ad;
+}
+
+/* mouse over link */
+a:hover {
+    color:#2b3d50;
+	background:#ffeead;
+}
+
+a.ex1:hover{
+	background:#FFFFFF;
+}
+
+/* selected link */
+a:active {
+	background:#ffeead;
+    color:#2b3d50;
+}
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size:10pt;
+	margin:2%;
+	margin-top:5%;
+	background-color:#FFF;
+	color:#aaaaa;
+}
+p{
+	color:#000;
+	max-width:85%;
+}
+img {
+	max-width:75%;
+	margin-left: auto;
+    margin-right: auto;
+}
+.video-container {
+	position:relative;
+	padding-bottom:56.25%;
+	padding-top:30px;
+	height:0;
+	overflow:hidden;
+}
+
+.video-container iframe, .video-container object, .video-container embed {
+	position:absolute;
+	top:0;
+	left:0;
+	width:75%;
+	height:75%;
+}
