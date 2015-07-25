@@ -1,3 +1,7 @@
+@-ms-viewport{
+  width: device-width;
+}
+
 /* unvisited link */
 a:link {
     color: #2b3d50;
