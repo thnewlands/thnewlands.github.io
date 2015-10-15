@@ -4,8 +4,17 @@
 <head>
 <title>Hug Point</title>
 <link rel="stylesheet" href="../../mystyle.css">
+<script src="../../jquery-2.1.4.min.js" type="text/javascript"></script>
 </head>
 <body>
+	
+	<div id="sidebar">
+	<script>
+		$( "#sidebar" ).load( "../../menu.html" );
+	</script>
+	</div>
+	
+	<div id="content"> 
 	<p> <b> Hug Point, Oregon 45.831015, -123.962879 - 2015 </b> </p>
 	
 	<p> A processing sketch uses <a href="https://code.google.com/p/simple-openni/" target="newtab">SimpleOpenNI</a>  libraries to render kinect points in space. Points are placed in a scene composed of LIDAR scan data of  <a href="https://www.google.com/maps/place/45.831015,%20-123.962879" target="newtab">Hug Point</a> (along the Oregon Coast). </p>
@@ -15,6 +24,7 @@
 	<p> <div class="video-container"> <iframe src="https://www.youtube.com/embed/IdHH6N03wnQ?rel=0"" frameborder="0" allowfullscreen></iframe> </div> </p>
 	
 	<p> Built off of Max Rheiner's example in the <a href="https://code.google.com/p/simple-openni/" target="newtab">SimpleOpenNI</a> libary: "SimpleOpenNI AlternativeViewpoint3d Test" and <a href="http://forum.processing.org/one/topic/loading-a-huge-xyz-point-cload-file.html" target="newtab"> tai_pinc's code for loading points from xyz point clouds.</a> Oregon LIDAR available through <a href="http://www.pdx.edu/gisinfo/oregon-lidar-data" target="newtab">PSU's public collection.</a></p>
+	</div>
 	
 </body>
 </html>
