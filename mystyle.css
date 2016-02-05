@@ -66,3 +66,6 @@ img {
 	position: absolute;
 	left: 22%;
 }
+.tmblr-iframe{
+	display:none;
+}
