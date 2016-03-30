@@ -38,6 +38,7 @@ body {
 p{
 	color:#000;
 	max-width:85%;
+	width: 75%;
 }
 img {
 	max-width:75%;
@@ -46,9 +47,9 @@ img {
 }
 .video-container {
  	position:relative;
-	padding-bottom:56.25%;
+	padding-bottom:38%;
 	padding-top:30px;
-	height:0;
+	width: 75%;
 	overflow:hidden; 
 }
 
