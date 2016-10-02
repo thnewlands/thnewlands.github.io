@@ -30,7 +30,7 @@ a:active {
     color:#2b3d50;
 }
 body {
-	font-family: 'Roboto:400', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-size:10pt;
 	margin:2%;
 	margin-top:5%;
@@ -41,9 +41,6 @@ p{
 	color:#000;
 	max-width:85%;
 	width: 75%;
-}
-b{
-	font-family: 'Roboto:500', sans-serif;
 }
 img {
 	max-width:75%;
