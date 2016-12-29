@@ -18,8 +18,7 @@
 	<script type="text/javascript">
 	function tumblr(resp) {
 		var posts = resp.posts;
-		$('#blog .loading').replaceWith('<ul/>');
-		$ul = $('#blog ul');
+		$ul = $('#content ul');
 		for (var i=0; i<posts.length; i++) {
 			var p = posts[i];
 			var title = p['regular-title'] || p['link-text'] || null;
@@ -37,19 +36,14 @@
 	</script>
 	</div>
 	
-//	<div id="content"> 
+	<div id="content"> 
 //	<script src="http://thnewlands.tumblr.com/js" type="text/javascript"></script>
-//	</div>
-	
-	<!-- Where you want your tumblog -->
-	<div id="blog">
-		<h2>My Blog</h2>
-		<span class="loading">Loading...</span>
 	</div>
+	
 </body>
 </html>
 
 
 
 <!-- Bottom of the page, probably.  Change host -->
-<script src="http://thnewlands/api/read/json?callback=tumblr&amp;num=10" type="text/javascript"></script>
+<script src="http://thnewlands.tumblr.com/api/read/json?callback=tumblr&amp;num=10" type="text/javascript"></script>
