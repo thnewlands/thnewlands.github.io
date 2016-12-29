@@ -1,7 +1,11 @@
 <html>
   <head>
     <script	src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-
+  </head>
+ 
+<body>
+  <div id="content">
+    
     <script type="text/javascript">
     $.ajax({
         url: "http://api.tumblr.com/v2/blog/thnewlands.tumblr.com/posts?api_key=71wcLjAWmhjAK17EdQBI6OCo2yM55WXRdCLGNGjwT6ltjXlnWA",
@@ -26,14 +30,10 @@
     text += '<a href='+ p.post_url +'>'+ p.post_url +'</a></li>';
           text += '<br></br>';
           }
-          $('content').append(text);
+          document.write(text);
         }
     });
     </script>
-  </head>
- 
-<body>
-  <div id="content">
   </div>
 </body>
 
