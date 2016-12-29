@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 
@@ -9,8 +10,7 @@
 	<style>
 		.tmblr-iframe{  display:none; }
 	</style>
-	<pre class="prettyprint"><script type="text/javascript" src="http://thnewlands.tumblr.com/api/read/json"></script>
-</pre>
+	
 </head>
 <body>
 	<div id="sidebar">
@@ -20,20 +20,7 @@
 	</div>
 	
 	<div id="content"> 
-		<script type=text/javascript>
-		    const recent_posts_count = 5;
-		    var tumblr_api_read = tumblr_api_read || null;
-		    if (tumblr_api_read != null) {
-			    var recentPostsHtml = "<ul>";
-			    for (var i = 0; i < recent_posts_count; i++) {
-				    var url = tumblr_api_read.posts[i].url;
-				    var title = tumblr_api_read.posts[i]["regular-title"];
-				    recentPostsHtml += "<li><a href=" + url + ">" + title + "</a></li>";
-			    }
-			    recentPostsHtml += "</ul>";
-			    document.write(recentPostsHtml);
-		    }
-		</script>
+	<script src="http://thnewlands.tumblr.com/js" type="text/javascript"></script>
 	</div>
 
 </body>
