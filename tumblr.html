@@ -5,9 +5,9 @@
  
 <body>
   <div id="content">
-    
-    <script type="text/javascript">
-    $.ajax({
+  </div>
+</body>
+  <script>    $.ajax({
         url: "http://api.tumblr.com/v2/blog/thnewlands.tumblr.com/posts?api_key=71wcLjAWmhjAK17EdQBI6OCo2yM55WXRdCLGNGjwT6ltjXlnWA",
         dataType: 'jsonp',
         success: function(posts){
@@ -30,11 +30,7 @@
     text += '<a href='+ p.post_url +'>'+ p.post_url +'</a></li>';
           text += '<br></br>';
           }
-          document.write(text);
+          $('content').append(text);
         }
-    });
-    </script>
-  </div>
-</body>
-
+    });</script>
 </html>
