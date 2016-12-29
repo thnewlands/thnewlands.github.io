@@ -21,6 +21,6 @@ $.ajax({
     text += '<a href='+ p.post_url +'>'+ p.post_url +'</a></li>';
           text += '<br></br>';
           }
-          $('content').append(text);
+          $('#content').append(text);
         }
     });
