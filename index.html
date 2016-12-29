@@ -19,15 +19,22 @@
 	</script>
 	</div>
 	
+	<script type=text/javascript>
+	    const recent_posts_count = 5;
+	    var tumblr_api_read = tumblr_api_read || null;
+	    if (tumblr_api_read != null) {
+		    var recentPostsHtml = "<ul>";
+		    for (var i = 0; i < recent_posts_count; i++) {
+			    var url = tumblr_api_read.posts[i].url;
+			    var title = tumblr_api_read.posts[i]["regular-title"];
+			    recentPostsHtml += "<li><a href=" + url + ">" + title + "</a></li>";
+		    }
+		    recentPostsHtml += "</ul>";
+		    $("#content").append(recentPostsHtml);
+	    }
+	</script>
+	
 	<div id="content"> 
-		<script type="text/javascript">
-		    // The variable "tumblr_api_read" is now set to your tumblr feed.
-
-		    document.write(
-			'<a href="' + tumblr_api_read['posts'][0]['url'] + 
-			'">My most recent Tumblr post</a>'
-		    );
-		</script>	
 	</div>
 
 </body>
