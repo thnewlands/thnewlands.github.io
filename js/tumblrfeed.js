@@ -13,7 +13,7 @@ $.ajax({
         text +='<img src=' +  p.photos[0].original_size.url + '>' + p.caption
       }
         if(p.type == 'video'){
-        text += p.player[0].embed_code +'<p></p>' + p.caption;
+        text += '<div class="video-container">' + p.player[0].embed_code + '</div>' +'<p></p>' + p.caption;
       }
           if(p.type == 'text'){
         text += p.body + p.caption;
