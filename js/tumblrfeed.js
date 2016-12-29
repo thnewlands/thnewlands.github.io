@@ -1,0 +1,26 @@
+$.ajax({
+        url: "http://api.tumblr.com/v2/blog/thnewlands.tumblr.com/posts?api_key=71wcLjAWmhjAK17EdQBI6OCo2yM55WXRdCLGNGjwT6ltjXlnWA",
+        dataType: 'jsonp',
+        success: function(posts){
+          var postings = posts.response.posts;
+          console.log(postings);
+          var text = '';
+
+    for (var i in postings) {
+           var p = postings[i];
+          text += '<p></p>';
+      if(p.type == 'photo'){
+        text +='<img src=' +  p.photos[0].original_size.url + '>' + p.caption
+      }
+        if(p.type == 'video'){
+        text += p.player[0].embed_code +'<p></p>' + p.caption;
+      }
+          if(p.type == 'text'){
+        text += p.body + p.caption;
+      }
+    text += '<a href='+ p.post_url +'>'+ p.post_url +'</a></li>';
+          text += '<br></br>';
+          }
+          $('content').append(text);
+        }
+    });
