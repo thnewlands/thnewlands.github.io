@@ -11,7 +11,7 @@ a:link {
 
 /* visited link */
 a:visited {
-    color:#9ca4ad;
+    color:#41576d;
 }
 
 /* mouse over link */
@@ -39,8 +39,8 @@ body {
 }
 p{
 	color:#000;
-	max-width:85%;
-	width: 75%;
+	max-width:90%;
+	width: 90%;
 }
 img {
 	max-width:75%;
@@ -54,7 +54,12 @@ img {
 	width: 75%;
 	overflow:hidden; 
 }
-
+td {
+  width: 33%;
+}
+td+td {
+  width: auto;
+}
 .video-container iframe, .video-container object, .video-container embed {
 	position:absolute;
 	top:0;
@@ -67,5 +72,6 @@ img {
 }
 #content{
 	position: absolute;
-	left: 22%;
+	left: 10%;
+    padding-right: 10%
 }
