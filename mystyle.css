@@ -36,9 +36,8 @@ a:active {
 body {
 	font-family: 'Roboto', sans-serif;
 	font-size:15pt;
-	margin:2%;
-	margin-top:2%;
 	background-color:#f6f5f3;
+    margin: 0pt;
 	color:#aaaaa;
 }
 p{
@@ -102,4 +101,8 @@ td+td {
     padding-top:6pt;
 	font-size:10pt;
     font-style:italic
+}
+#processing{
+    position:fixed;
+    z-index: -1;
 }

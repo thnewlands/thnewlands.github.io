@@ -1,0 +1,27 @@
+var scrollVelocity = 0;
+function setup() {
+    canvas = createCanvas(windowWidth, windowHeight);
+    canvas.parent('processing');
+    canvas.elt.style.position = "fixed";
+}
+function windowResized(){
+    resizeCanvas(windowWidth, windowHeight);
+}
+function draw() {
+    colorMode(RGB, 256);
+    background(246, 245, 243,50 * 1 + scrollVelocity);
+    colorMode(HSB, 256);
+    for (var i = 0; i < 12; i++){
+        stroke(0,0);
+        fill(random(256), 100, 256, 150 * 1/(.1 + scrollVelocity*.085));
+
+        ptSize = random(3);
+        ellipse(random(windowWidth), random(windowHeight), ptSize, lerp(ptSize, ptSize * 2, scrollVelocity));
+    }
+	scrollVelocity = 0;
+}
+
+// Functions
+function mouseWheel(event) {
+  scrollVelocity = abs(event.delta);
+}
