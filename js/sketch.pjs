@@ -16,7 +16,7 @@ function draw() {
         fill(random(256), 100, 256, 150 * 1/(.1 + scrollVelocity*.085));
 
         ptSize = random(3);
-        ellipse(random(windowWidth), random(windowHeight), ptSize, lerp(ptSize, ptSize * 2, scrollVelocity));
+        ellipse(random(windowWidth), random(windowHeight), ptSize, lerp(ptSize, ptSize * 1.25, scrollVelocity));
     }
 	scrollVelocity = 0;
 }
