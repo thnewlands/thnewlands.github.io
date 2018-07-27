@@ -11,7 +11,7 @@ a:link {
 
 /* visited link */
 a:visited {
-    color:#9ca4ad;
+    color:#41576d;
 }
 
 /* mouse over link */
@@ -31,7 +31,7 @@ a:active {
 }
 body {
 	font-family: 'Roboto', sans-serif;
-	font-size:10pt;
+	font-size:15pt;
 	margin:2%;
 	margin-top:2%;
 	background-color:#f6f5f3;
@@ -39,11 +39,17 @@ body {
 }
 p{
 	color:#000;
-	max-width:85%;
-	width: 75%;
+	max-width:90%;
+	width: 90%;
+}
+hr{
+    border-width: .5px;
+    border-style: dashed;
+    width: 500%;
+    margin-left: -500px;
 }
 img {
-	max-width:75%;
+	width: 280px;
 	margin-left: auto;
     margin-right: auto;
 }
@@ -54,7 +60,14 @@ img {
 	width: 75%;
 	overflow:hidden; 
 }
-
+td {
+    padding-top:15px;
+}
+td+td {
+    text-align: left;
+    display: block;
+    margin-left: 20px;
+}
 .video-container iframe, .video-container object, .video-container embed {
 	position:absolute;
 	top:0;
@@ -67,5 +80,22 @@ img {
 }
 #content{
 	position: absolute;
-	left: 22%;
+	left: 10%;
+    padding-right: 10%
+}
+#gamesblock{
+    background-color: coral;
+}
+#description{
+    padding-top:6pt;
+	font-size:12pt;
+}
+#furtherreading{
+    padding-top:4pt;
+	font-size:10pt;
+}
+#credits{
+    padding-top:6pt;
+	font-size:10pt;
+    font-style:italic
 }
