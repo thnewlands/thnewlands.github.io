@@ -15,7 +15,7 @@ function draw() {
         var xPos = random(windowWidth);
 				var bodyMask = (sin((xPos/windowWidth)*TWO_PI + (PI/2))+1)/2;
 			bodyMask = pow(bodyMask, 9) + .1;
-        var velocityLightener = 1/(.1 + scrollVelocity*.085);
+        var velocityLightener = 1/(.1 + scrollVelocity*.01);
 				stroke(0,0);
         fill(random(256), 100, 256, 150 * velocityLightener * bodyMask);
         ptSize = random(3);
