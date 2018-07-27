@@ -31,7 +31,7 @@ a:active {
 }
 body {
 	font-family: 'Roboto', sans-serif;
-	font-size:18pt;
+	font-size:15pt;
 	margin:2%;
 	margin-top:2%;
 	background-color:#f6f5f3;
@@ -42,8 +42,14 @@ p{
 	max-width:90%;
 	width: 90%;
 }
+hr{
+    border-width: .5px;
+    border-style: dashed;
+    width: 500%;
+    margin-left: -500px;
+}
 img {
-	max-width:75%;
+	width: 280px;
 	margin-left: auto;
     margin-right: auto;
 }
@@ -55,10 +61,12 @@ img {
 	overflow:hidden; 
 }
 td {
-  width: 33%;
+    padding-top:15px;
 }
 td+td {
-  width: auto;
+    text-align: left;
+    display: block;
+    margin-left: 20px;
 }
 .video-container iframe, .video-container object, .video-container embed {
 	position:absolute;
@@ -74,4 +82,20 @@ td+td {
 	position: absolute;
 	left: 10%;
     padding-right: 10%
+}
+#gamesblock{
+    background-color: coral;
+}
+#description{
+    padding-top:6pt;
+	font-size:12pt;
+}
+#furtherreading{
+    padding-top:4pt;
+	font-size:10pt;
+}
+#credits{
+    padding-top:6pt;
+	font-size:10pt;
+    font-style:italic
 }
