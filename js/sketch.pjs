@@ -11,12 +11,15 @@ function draw() {
     colorMode(RGB, 256);
     background(246, 245, 243,50 * 1 + scrollVelocity);
     colorMode(HSB, 256);
-    for (var i = 0; i < 12; i++){
-        stroke(0,0);
-        fill(random(256), 100, 256, 150 * 1/(.1 + scrollVelocity*.085));
-
+    for (var i = 0; i < 24; i++){
+        var xPos = random(windowWidth);
+				var bodyMask = (sin((xPos/windowWidth)*TWO_PI + (PI/2))+1)/2;
+			bodyMask = pow(bodyMask, 9) + .1;
+        var velocityLightener = 1/(.1 + scrollVelocity*.085);
+				stroke(0,0);
+        fill(random(256), 100, 256, 150 * velocityLightener * bodyMask);
         ptSize = random(3);
-        ellipse(random(windowWidth), random(windowHeight), ptSize, lerp(ptSize, ptSize * 1.25, scrollVelocity));
+        ellipse(xPos, random(windowHeight), ptSize, lerp(ptSize, ptSize * 1.25, scrollVelocity));
     }
 	scrollVelocity = 0;
 }
