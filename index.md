@@ -4,13 +4,13 @@ You can reach me at [thnewlands@gmail.com](mailto:thnewlands@gmail.com) or on Tw
 If you're interested in my work as a technical artist you can find it here: [thnewlands-ta.tumblr.com/](https://thnewlands-ta.tumblr.com/)
 
 
-[cv](/indexpages/cv/)
-[resume](/files/Thomas_Newlands_Resume.pdf)
-[tumblr](http://thnewlands.tumblr.com/)
-[twitter](http://twitter.com/thnewlands)
-[itch.io](https://thnewlands.itch.io/)
-[github](https://github.com/thnewlands)
-[unity connect](https://connect.unity.com/u/58197689090915002eeb3858/)
+[:scroll:cv](/indexpages/cv/)
+[:book:resume](/files/Thomas_Newlands_Resume.pdf)
+[:memo:tumblr](http://thnewlands.tumblr.com/)
+[:bird:twitter](http://twitter.com/thnewlands)
+[:video_game:itch.io](https://thnewlands.itch.io/)
+[:computer:github](https://github.com/thnewlands)
+[:calling:unity connect](https://connect.unity.com/u/58197689090915002eeb3858/)
 
 - - - 
 
