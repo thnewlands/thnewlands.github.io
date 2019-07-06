@@ -1,4 +1,4 @@
-# Thomas Newlands's Portable Museum
+# Thomas Newlands' Portable Museum
 You can reach me at [thnewlands@gmail.com](mailto:thnewlands@gmail.com) or on Twitter as [@thnewlands](http://twitter.com/thnewlands)
 
 If you're interested in my work as a technical artist you can find it here: [thnewlands-ta.tumblr.com/](https://thnewlands-ta.tumblr.com/)
@@ -19,6 +19,7 @@ If you're interested in my work as a technical artist you can find it here: [thn
 
 |                                    |    | 
 | ---------------------------------- |:-- |
+| [![][amazeguestbook-image]][amazeguestbook-link]     | :bell:[A MAZE. Marble Guestbook][amazeguestbook-link] <br> 2019 <br> <div id = "description"> a guestbook made of virtual marbles for A MAZE. / Berlin 2019. </div> <div id = "furtherreading"> </div><div id = "credits"> A collaboration with Moshe Linke </div> |
 | [![][softfriends-image]][softfriends-link]     | :leaves:[,,,softfriends,,,][softfriends-link] <br> 2017 <br> <div id = "description"> a meditative textural adventure game. </div> <div id = "furtherreading"> Shown in [Activatar](http://www.activatar.org/about/february18/softfriends/) and [The Mild Rumpus](http://thewildrumpus.co.uk/mildrumpus18) and written about on [RockPaperShotgun](https://www.rockpapershotgun.com/2018/02/26/softfriends-landscape-game/) </div><div id = "credits"> </div> |
 | [![][tbf-image]][tbf-link]             | :droplet:[That Blooming Feeling][tbf-link]   <br> 2017 <br> <div id = "description">  a gardening videopicturebook about welcoming a youthful joy into our selves. </div><div id = "furtherreading"> Shown in [Indiecade](https://www.indiecade.com/Press/news_resources/indiecade-announces-nominees-game-selections-for-10th-anniversary-festival), BitBash, and BitxBit. Also see: [Plants](https://thnewlands-ta.tumblr.com/post/166420614310/that-blooming-feeling-plantsmore-i-modeled), [Mush Tech](https://thnewlands-ta.tumblr.com/post/166421626295/that-blooming-feeling-mush-techmore-i), [Technical Art](https://thnewlands-ta.tumblr.com/post/166420649210/that-blooming-feeling-technical-art-and) and [RockPaperShotgun Article](https://www.rockpapershotgun.com/2017/06/16/that-blooming-feeling/) </div><div id = "credits"> Made with the Tots Team </div>|
 | [![][tortenna-image]][tortenna-link]       | :european_castle:[The Tower at Tortenna][tortenna-link] <br> 2017 - DreamHack Jam Winner <br><div id = "description"> an ambient first person exploration game set in the ruins of a cloud-bound tower. </div> <div id = "furtherreading"> Shown at DreamHack Denver 2017. Also see: [Technical Art](https://thnewlands-ta.tumblr.com/post/166422324705/the-tower-at-tortenna-effectsmore), [VentureBeat Article](https://venturebeat.com/2017/10/31/the-tower-at-tortennas-mystery-hides-in-a-puzzle-of-a-still-life-city/), and [Jam Page](http://jams.gamejolt.io/dreamhackjam/games/thetowerattortenna/287548) </div> <div id = "credits"> Made with the Tower Team </div> |
@@ -76,3 +77,5 @@ If you're interested in my work as a technical artist you can find it here: [thn
 [hugpoint-link]: /indexpages/hugpoint/
 [alpifier-image]: /indexpages/alpifier/alpifier.png
 [alpifier-link]: /indexpages/alpifier/
+[amazeguestbook-image]: /indexpages/amazeguestbook/amaze2.jpg
+[amazeguestbook-link]: https://www.moshelinke.de/home-portfolio/the-marble-guestbook/
