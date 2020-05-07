@@ -43,7 +43,7 @@ If you're interested in my work as a technical artist you can find it here: [thn
 | [![][alpifier-image]][alpifier-link]    |:mountain_snow:[Wavering Alpifier][alpifier-link] <br> 2016 <br><div id = "description"> a kinect app that makes mountains out of what it sees. </div> <div id = "furtherreading"> </div> <div id = "credits"> </div>|
 | [![][hugpoint-image]][hugpoint-link]        | :dizzy:[Hug Point, Oregon][hugpoint-link] <br> 2016 <br><div id = "description"> a kinect app that projects the user into a disorienting cinematic visualization of Hug Point. </div>  <div id = "furtherreading"> </div> <div id = "credits"> </div>|
 
-[virtualvenue-image]:/indexpages/virtualvenue/vv_1.png
+[virtualvenue-image]:/indexpages/virtualvenue/vv_1.jpg
 [virtualvenue-link]:https://www.glowbox.io/les-boreades
 [mystery-image]: /indexpages/unannounced/unannounced.png
 [mystery-link]: https://twitter.com/glrbwrld1822183
