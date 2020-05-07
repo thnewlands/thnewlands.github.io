@@ -45,9 +45,7 @@ If you're interested in my work as a technical artist you can find it here: [thn
 
 [virtualvenue-image]:/indexpages/virtualvenue/vv_1.jpg
 [virtualvenue-link]:https://www.glowbox.io/les-boreades
-[mystery-image]: /indexpages/unannounced/unannounced.png
-[mystery-link]: https://twitter.com/glrbwrld1822183
-[pets-image]: https://m.gjcdn.net/screenshot-thumbnail/600x2000/439132-v3.jpg
+[pets-image]: /indexpages/pets/windowsill.jpg
 [pets-link]: https://gamejolt.com/games/pets4vr/266532
 [tortenna-image]: https://img.itch.zone/aW1hZ2UvMTg0MzU5Lzg2NjMwOS5qcGc=/794x1000/0Zyx35.jpg
 [tortenna-link]: https://tower-team-international.itch.io/the-tower-at-tortenna
