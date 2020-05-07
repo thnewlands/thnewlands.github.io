@@ -5,20 +5,18 @@ If you're interested in my work as a technical artist you can find it here: [thn
 
 
 [:scroll:cv](/indexpages/cv/)
-[:book:resume](/files/Thomas_Newlands_Resume.pdf)
-[:memo:tumblr](http://thnewlands.tumblr.com/)
 [:bird:twitter](http://twitter.com/thnewlands)
 [:video_game:itch.io](https://thnewlands.itch.io/)
 [:computer:github](https://github.com/thnewlands)
-[:calling:unity connect](https://connect.unity.com/u/58197689090915002eeb3858/)
 
 - - - 
 
-## Games
+## Projects
 
 
 |                                    |    | 
 | ---------------------------------- |:-- |
+| [![][virtualvenue-image]][virtualvenue-link]     | :violin:[Les Boréades][virtualvenue-link] <br> 2020 <br> <div id = "description"> an immersive classical music performance staged in artistically rendered photoscanned environments  </div> <div id = "furtherreading"> </div><div id = "credits"> Visual effects work for Glowbox </div> |
 | [![][diatribes-image]][diatribes-link]     | :amphora:[Diatribes][diatribes-link] <br> Ongoing <br> <div id = "description"> a virtual reality funhouse full of existential quandaries. </div> <div id = "furtherreading"> </div><div id = "credits"> A collaboration with Veronica Graham, Julia Kim, and Spencer Rabin </div> |
 | [![][amazeguestbook-image]][amazeguestbook-link]     | :bell:[A MAZE. Marble Guestbook][amazeguestbook-link] <br> 2019 <br> <div id = "description"> a guestbook made of virtual marbles for A MAZE. / Berlin 2019. </div> <div id = "furtherreading"> </div><div id = "credits"> A collaboration with Moshe Linke </div> |
 | [![][softfriends-image]][softfriends-link]     | :leaves:[,,,softfriends,,,][softfriends-link] <br> 2017 <br> <div id = "description"> a meditative textural adventure game. </div> <div id = "furtherreading"> Shown in [Activatar](http://www.activatar.org/about/february18/softfriends/) and [The Mild Rumpus](http://thewildrumpus.co.uk/mildrumpus18) and written about on [RockPaperShotgun](https://www.rockpapershotgun.com/2018/02/26/softfriends-landscape-game/) </div><div id = "credits"> </div> |
@@ -34,7 +32,7 @@ If you're interested in my work as a technical artist you can find it here: [thn
 
 - - - 
 
-## Other things
+## Other
 
 
 |                                    |    | 
@@ -45,7 +43,8 @@ If you're interested in my work as a technical artist you can find it here: [thn
 | [![][alpifier-image]][alpifier-link]    |:mountain_snow:[Wavering Alpifier][alpifier-link] <br> 2016 <br><div id = "description"> a kinect app that makes mountains out of what it sees. </div> <div id = "furtherreading"> </div> <div id = "credits"> </div>|
 | [![][hugpoint-image]][hugpoint-link]        | :dizzy:[Hug Point, Oregon][hugpoint-link] <br> 2016 <br><div id = "description"> a kinect app that projects the user into a disorienting cinematic visualization of Hug Point. </div>  <div id = "furtherreading"> </div> <div id = "credits"> </div>|
 
-
+[virtualvenue-image]:/indexpages/virtualvenue/vv_1.png
+[virtualvenue-link]:https://www.glowbox.io/les-boreades
 [mystery-image]: /indexpages/unannounced/unannounced.png
 [mystery-link]: https://twitter.com/glrbwrld1822183
 [pets-image]: https://m.gjcdn.net/screenshot-thumbnail/600x2000/439132-v3.jpg
