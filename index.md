@@ -1,4 +1,4 @@
-# Thomas Newlands' Portable Museum
+# Holly Newlands' Portable Museum
 You can reach me at [thnewlands@gmail.com](mailto:thnewlands@gmail.com) or on Twitter as [@thnewlands](http://twitter.com/thnewlands)
 
 If you're interested in my work as a technical artist you can find it here: [thnewlands-ta.tumblr.com/](https://thnewlands-ta.tumblr.com/)
